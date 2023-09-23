@@ -18,7 +18,47 @@ function getUserChoice() {
 function evaluate(computerSelection, userSelection) {
     if (userSelection == computerSelection) {
         return "Draw"
-    } else {
-        return "NoDraw"
+    }
+    switch (computerSelection){
+        case "Rock": 
+            if (userSelection=="Paper"){
+                return "user";
+            } else if (userSelection=="Scissors"){
+                return "computer";
+            } else {
+                return "draw";
+            }
+        case "Paper":
+            if (userSelection=="Scissors"){
+                return "user";
+            } else if (userSelection=="Rock"){
+                return "computer";
+            } else {
+                return "draw";
+            }
+        case "Scissors":
+            if (userSelection=="paper"){
+                return "computer";
+            } else if (userSelection=="rock"){
+                return "user";
+            } else {
+                return "draw";
+            }
     }
 }
+
+function game(rounds){
+    for (let i = 0;i<rounds;i++){
+        let computer = getComputerChoice();
+        let user = getUserChoice();
+        result = evaluate(computer, user)
+        console.log(`Computer:  ${computer}     User:  ${user}.`)
+        if (result == "draw"){
+            console.log("It was a draw");
+        } else {
+            console.log(`The ${result} won.`)
+        }
+    }
+}
+
+game(5);
