@@ -1,4 +1,6 @@
 const choices = ["Rock", "Paper", "Scissors"];
+let playerScore = 0
+let computerScore = 0
 
 function capitalizeFirstLetter(string) {
     string = string.toLowerCase();
@@ -17,29 +19,35 @@ function getUserChoice() {
 
 function evaluate(computerSelection, userSelection) {
     if (userSelection == computerSelection) {
-        return "Draw"
+        return "draw"
     }
-    switch (computerSelection){
-        case "Rock": 
-            if (userSelection=="Paper"){
+    switch (computerSelection) {
+        case "Rock":
+            if (userSelection == "Paper") {
+                playerScore++
                 return "user";
-            } else if (userSelection=="Scissors"){
+            } else if (userSelection == "Scissors") {
+                computerScore++
                 return "computer";
             } else {
                 return "draw";
             }
         case "Paper":
-            if (userSelection=="Scissors"){
+            if (userSelection == "Scissors") {
+                playerScore++
                 return "user";
-            } else if (userSelection=="Rock"){
+            } else if (userSelection == "Rock") {
+                computerScore++
                 return "computer";
             } else {
                 return "draw";
             }
         case "Scissors":
-            if (userSelection=="paper"){
+            if (userSelection == "Paper") {
+                computerScore++
                 return "computer";
-            } else if (userSelection=="rock"){
+            } else if (userSelection == "Rock") {
+                playerScore++
                 return "user";
             } else {
                 return "draw";
@@ -47,18 +55,22 @@ function evaluate(computerSelection, userSelection) {
     }
 }
 
-function game(rounds){
-    for (let i = 0;i<rounds;i++){
-        let computer = getComputerChoice();
-        let user = getUserChoice();
-        result = evaluate(computer, user)
-        console.log(`Computer:  ${computer}     User:  ${user}.`)
-        if (result == "draw"){
-            console.log("It was a draw");
-        } else {
-            console.log(`The ${result} won.`)
-        }
+function game(userChoice) {
+    let computerChoice = getComputerChoice();
+    result = evaluate(computerChoice, userChoice)
+    console.log(`Computer:  ${computerChoice}     User:  ${userChoice}`)
+    if (result == "draw") {
+        resultbox.textContent = `It was a draw`
+    } else {
+        resultbox.textContent = `The ${result} won`
     }
 }
 
-game(5);
+
+const rockbtn = document.getElementById('rock')
+const paperbtn = document.getElementById('paper')
+const scissorsbtn = document.getElementById('scissors')
+const resultbox = document.getElementById('result')
+rockbtn.addEventListener('click', () => game('Rock'))
+paperbtn.addEventListener('click', () => game('Paper'))
+scissorsbtn.addEventListener('click', () => game('Scissors'))

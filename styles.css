@@ -1,0 +1,37 @@
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+main {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+  }
+
+button {
+    height: 100px;
+    width: 100px;
+    margin: 30px;
+}
+
+#result {
+    height: 100 px;
+    width: auto;
+    text-align: center;
+    border: 2px;
+    background-color: lightgray;
+}
