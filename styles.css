@@ -4,14 +4,23 @@ body {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin: 0;
 }
 
-h1 {
-    font-size: 32px;
+.scoreboard {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin: 5px;
 }
 
-main {
-    margin-top: 40px;
+.scores-container {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.score-box {
     text-align: center;
 }
 
@@ -20,18 +29,15 @@ main {
     align-items: center;
     justify-content: center;
     gap: 30px;
-  }
-
-button {
-    height: 100px;
-    width: 100px;
-    margin: 30px;
+    margin: 5px;
 }
 
-#result {
-    height: 100 px;
-    width: auto;
-    text-align: center;
-    border: 2px;
-    background-color: lightgray;
+.btn {
+    margin: 30px;
+    border-radius: 5px;
+}
+
+.sign {
+    font-size: 50px;
+    padding: 25px;
 }

@@ -14,6 +14,22 @@
         <h1 class="title">ROCK PAPER SCISSORS</h1>
     </header>
     <main class="main">
+        <div class="scoreboard">
+            <h2 class="score-info" id="scoreInfo">Choose your weapon</h2>
+            <h3 class="score-message" id="scoreMessage">
+                First to score 5 points wins the game
+            </h3>
+            <div class="scores-container">
+                <div class="score-box">
+                    <div class="sign" id="playerSign">❔</div>
+                    <p class="score" id="playerScore">Player: 0</p>
+                </div>
+                <div class="score-box">
+                    <div class="sign" id="computerSign">❔</div>
+                    <p class="score" id="computerScore">Computer: 0</p>
+                </div>
+            </div>
+        </div>
         <div class="buttons">
             <button class="btn" id="rock">
                 <div class="sign">✊</div>
@@ -24,9 +40,6 @@
             <button class="btn" id="scissors">
                 <div class="sign">✌</div>
             </button>
-        </div>
-        <div class="result">
-            <p class="result" id="result"></p>
         </div>
     </main>
     <footer class="footer">
